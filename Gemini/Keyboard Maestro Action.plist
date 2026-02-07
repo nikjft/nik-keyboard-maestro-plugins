@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Name</key>
+	<string>Google Gemini</string>
+	<key>Script</key>
+	<string>gemini_request.sh</string>
+	<key>Icon</key>
+	<string>org.chromium.Chromium</string>
+	<key>Title</key>
+	<string>Google Gemini Request</string>
+	<key>Results</key>
+	<string>Window|Variable|Clipboard</string>
+	<key>Parameters</key>
+	<array>
+		<dict>
+			<key>Label</key>
+			<string>Model</string>
+			<key>Type</key>
+			<string>PopupMenu</string>
+			<key>Default</key>
+			<string>gemini-2.5-flash</string>
+			<key>Menu</key>
+			<string>gemini-2.5-flash|gemini-2.5-pro|gemini-3-flash-preview|gemini-3-pro-preview</string>
+		</dict>
+		<dict>
+			<key>Label</key>
+			<string>API Key</string>
+			<key>Type</key>
+			<string>TokenString</string>
+			<key>Default</key>
+			<string></string>
+			<key>Placeholder</key>
+			<string>Paste your Google AI Studio API Key here</string>
+		</dict>
+		<dict>
+			<key>Label</key>
+			<string>Prompt</string>
+			<key>Type</key>
+			<string>TokenText</string>
+			<key>Default</key>
+			<string></string>
+			<key>Placeholder</key>
+			<string>Enter your prompt (KM variables allowed)</string>
+		</dict>
+	</array>
+</dict>
+</plist>

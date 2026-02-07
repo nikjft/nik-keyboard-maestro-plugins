@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Name</key>
+	<string>Nano Banana Image Generation</string>
+	<key>Script</key>
+	<string>imagen_request.sh</string>
+	<key>Icon</key>
+	<string>org.chromium.Chromium</string>
+	<key>Title</key>
+	<string>Nano Banana</string>
+	<key>Results</key>
+	<string>Window|Variable|Clipboard</string>
+	<key>Parameters</key>
+	<array>
+		<dict>
+			<key>Label</key>
+			<string>Model</string>
+			<key>Type</key>
+			<string>PopupMenu</string>
+			<key>Default</key>
+			<string>imagen-3.0-generate-001</string>
+			<key>Menu</key>
+			<string>imagen-4.0-fast-generate-001|imagen-4.0-generate-001|imagen-4.0-ultra-generate-001</string>
+		</dict>
+		<dict>
+			<key>Label</key>
+			<string>API Key</string>
+			<key>Type</key>
+			<string>TokenString</string>
+			<key>Default</key>
+			<string>%Variable%GeminiAPIKey%</string>
+			<key>Placeholder</key>
+			<string>Use %Variable%GeminiAPIKey%</string>
+		</dict>
+		<dict>
+			<key>Label</key>
+			<string>Prompt</string>
+			<key>Type</key>
+			<string>TokenText</string>
+			<key>Default</key>
+			<string></string>
+			<key>Placeholder</key>
+			<string>Describe the image you want to generate...</string>
+		</dict>
+		<dict>
+			<key>Label</key>
+			<string>Aspect Ratio</string>
+			<key>Type</key>
+			<string>PopupMenu</string>
+			<key>Default</key>
+			<string>1:1</string>
+			<key>Menu</key>
+			<string>1:1|16:9|4:3|3:4|9:16</string>
+		</dict>
+	</array>
+</dict>
+</plist>
