@@ -1,6 +1,12 @@
 # Keyboard Maestro Gemini Plugins
 
-This repository contains Keyboard Maestro plugins that leverage the power of Google's Gemini API for text processing and image generation.
+This repository contains Keyboard Maestro plugins that leverage Google's Gemini API for text processing and image generation.
+
+Since Gemini is pretty generous with its free tier, it's a good one for general use. 
+
+Different models are supported, so you can use the right ones for you and determine how much you want to spend. 
+
+**[Link: Gemini Pricing](https://ai.google.dev/gemini-api/docs/pricing)**
 
 ## Plugins
 
@@ -24,7 +30,7 @@ You need a Google Gemini API key to use these plugins.
 
 ## Installation
 
-1. Download the zip files from the latest release.
+1. Download the zip files from the [latest release](https://github.com/nikjft/nik-keyboard-maestro-plugins/releases).
 2. Drag and drop onto the Keyboard Maestro icon.
 
 If it's already installed and you are updating, you will need to delete the old version first from the ~/Library/Application Support/Keyboard Maestro/Keyboard Maestro Actions/ folder
