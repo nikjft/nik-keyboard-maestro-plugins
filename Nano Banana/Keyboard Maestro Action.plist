@@ -4,10 +4,16 @@
 <dict>
 	<key>Name</key>
 	<string>Nano Banana Image Generation</string>
+	<key>Author</key>
+	<string>Nik</string>
+	<key>Icon</key>
+	<string>icon.png</string>
+	<key>Help</key>
+	<string>Uses Gemini API to generate images - get an API key at https://aistudio.google.com/api-keys</string>
+	<key>URL</key>
+	<string>https://github.com/nikjft/nik-keyboard-maestro-plugins</string>
 	<key>Script</key>
 	<string>imagen_request.sh</string>
-	<key>Icon</key>
-	<string>org.chromium.Chromium</string>
 	<key>Title</key>
 	<string>Nano Banana</string>
 	<key>Results</key>

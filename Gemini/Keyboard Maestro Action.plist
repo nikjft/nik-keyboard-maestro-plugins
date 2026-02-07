@@ -4,10 +4,16 @@
 <dict>
 	<key>Name</key>
 	<string>Google Gemini</string>
+	<key>Author</key>
+	<string>Nik</string>
+	<key>Icon</key>
+	<string>icon.png</string>
+	<key>Help</key>
+	<string>Gemini AI plugin - get an API key at aistudio.google.com</string>
+	<key>URL</key>
+	<string>https://github.com/nikjft/nik-keyboard-maestro-plugins</string>
 	<key>Script</key>
 	<string>gemini_request.sh</string>
-	<key>Icon</key>
-	<string>org.chromium.Chromium</string>
 	<key>Title</key>
 	<string>Google Gemini Request</string>
 	<key>Results</key>
