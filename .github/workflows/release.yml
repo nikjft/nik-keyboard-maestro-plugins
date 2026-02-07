@@ -21,10 +21,16 @@ jobs:
       - name: Zip Nano Banana Plugin
         run: zip -r "Nano Banana.zip" "Nano Banana"
 
+
+      - name: Zip Gemini Vision Plugin
+        run: zip -r "Gemini Vision.zip" "Gemini Vision"
+
+
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
             Gemini.zip
             Nano Banana.zip
+            Gemini Vision.zip
           generate_release_notes: true
