@@ -1,0 +1,30 @@
+name: Release Plugins
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Zip Gemini Plugin
+        run: zip -r Gemini.zip Gemini
+
+      - name: Zip Nano Banana Plugin
+        run: zip -r "Nano Banana.zip" "Nano Banana"
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            Gemini.zip
+            Nano Banana.zip
+          generate_release_notes: true

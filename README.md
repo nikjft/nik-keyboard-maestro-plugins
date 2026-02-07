@@ -11,25 +11,26 @@ Use the Gemini API to process text prompts directly within your macros.
 -   **Inputs**: Acceptance of Keyboard Maestro variables in prompts.
 
 ### 2. **Nano Banana** (Image Generation)
-Generate images from text descriptions using Google's Imagen models.
--   **Models Support**: `imagen-3.0-generate-001`, `imagen-4.0-fast`, `imagen-4.0-generate`, `imagen-4.0-ultra`.
+Generate images from text descriptions using Google's "Nano Banana" Imagen models.
+-   **Models Support**: `imagen-4.0-fast`, `imagen-4.0-generate`, `imagen-4.0-ultra`.
 -   **Features**: Selectable aspect ratios (1:1, 16:9, 4:3, etc.).
 
 ## Prerequisites
+
+You will of course need [Keyboard Maestro](https://www.keyboardmaestro.com/) installed.
 
 You need a Google Gemini API key to use these plugins.
 👉 **[Get your API Key from Google AI Studio](https://aistudio.google.com/api-keys)**
 
 ## Installation
 
-1.  **Download**: Clone this repository or download the desired plugin folder.
-2.  **Install**:
-    *   Navigate to the plugin folder (e.g., `Gemini` or `Nano Banana`).
-    *   Double-click the `.zip` file (if applicable) or the `Keyboard Maestro Action.plist` file.
-    *   Keyboard Maestro should open and ask to install the plugin.
+1. Download the zip files from the latest release.
+2. Drag and drop onto the Keyboard Maestro icon.
+
+If it's already installed and you are updating, you will need to delete the old version first from the ~/Library/Application Support/Keyboard Maestro/Keyboard Maestro Actions/ folder
 
 For more detailed instructions on installing custom plugins, please refer to the official documentation:
-[Keyboard Maestro Wiki: Plug In Actions](https://wiki.keyboardmaestro.com/Plug_In_Actions)
+[Keyboard Maestro Wiki: Plug In Actions](https://wiki.keyboardmaestro.com/manual/Plug_In_Actions#How_to_Install)
 
 ## Configuration
 
