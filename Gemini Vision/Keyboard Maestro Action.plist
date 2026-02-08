@@ -9,7 +9,7 @@
 	<key>Icon</key>
 	<string>icon.png</string>
 	<key>Help</key>
-	<string>Gemini AI Vision plugin - analyzes images using Gemini API.</string>
+	<string>Gemini AI Vision plugin - analyzes image on clipboard using the Gemini API.</string>
 	<key>URL</key>
 	<string>https://github.com/nikjft/nik-keyboard-maestro-plugins</string>
 	<key>Script</key>
@@ -28,7 +28,7 @@
 			<key>Default</key>
 			<string>gemini-2.5-flash</string>
 			<key>Menu</key>
-			<string>gemini-2.5-flash|gemini-2.5-pro|gemini-3-flash-preview|gemini-3-pro-preview</string>
+			<string>gemini-2.5-flash|gemini-3-flash-preview</string>
 		</dict>
 		<dict>
 			<key>Label</key>
@@ -39,16 +39,6 @@
 			<string>%Variable%GeminiAPIKey%</string>
 			<key>Placeholder</key>
 			<string>Get API key from aistudio.google.com</string>
-		</dict>
-		<dict>
-			<key>Label</key>
-			<string>Image Source</string>
-			<key>Type</key>
-			<string>TokenString</string>
-			<key>Default</key>
-			<string>%CurrentClipboard%</string>
-			<key>Placeholder</key>
-			<string>%CurrentClipboard% or /path/to/image.png</string>
 		</dict>
 		<dict>
 			<key>Label</key>

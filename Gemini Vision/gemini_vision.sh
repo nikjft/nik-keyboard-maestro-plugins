@@ -3,10 +3,9 @@
 # 1. Capture KM Parameters
 MODEL="$KMPARAM_Model"
 API_KEY="$KMPARAM_API_Key"
-PROMPT="$KMPARAM_Prompt"
-IMAGE_SOURCE="$KMPARAM_Image_Source"
-
 # Safety Check: API Key
+PROMPT="$KMPARAM_Prompt"
+
 if [ -z "$API_KEY" ]; then
     echo "Error: API Key is missing."
     exit 1
@@ -17,24 +16,31 @@ TEMP_IMG="/tmp/km_vision_input.jpg"
 rm -f "$TEMP_IMG"
 
 # 2. Resolve Image Source
-# Logic: If the parameter is a valid file on disk, use it.
-# Otherwise (if it's empty, or a KM placeholder like "[Image...]"), default to System Clipboard.
-if [ -f "$IMAGE_SOURCE" ]; then
-    cp "$IMAGE_SOURCE" "$TEMP_IMG"
-else
-    # Use AppleScript to dump clipboard to file
-    osascript -e '
-        try
-            set theData to the clipboard as JPEG picture
-            set theFile to open for access POSIX file "/tmp/km_vision_input.jpg" with write permission
-            set eof of theFile to 0
-            write theData to theFile
-            close access theFile
-        on error
-            return "NO_IMAGE"
-        end try
-    ' > /dev/null
-fi
+# Logic:
+# 1. Clean up the input path (trim whitespace/newlines).
+# 2. Expand tilde (~) if present.
+# 3. If input is provided:
+#    - Verify it exists as a file.
+#    - If yes -> Use it.
+#    - If no -> ERROR (do NOT fall back to clipboard).
+# 4. If input is EMPTY -> Default to System Clipboard.
+
+# Trim whitespace and newlines
+IMAGE_SOURCE="$(echo "$IMAGE_SOURCE" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
+
+# Empty input -> Use AppleScript to dump clipboard to file
+osascript -e '
+    try
+        set theData to the clipboard as JPEG picture
+        set theFile to open for access POSIX file "/tmp/km_vision_input.jpg" with write permission
+        set eof of theFile to 0
+        write theData to theFile
+        close access theFile
+    on error
+        return "NO_IMAGE"
+    end try
+' > /dev/null
+
 
 # 3. Validate Image Data
 if [ ! -f "$TEMP_IMG" ]; then

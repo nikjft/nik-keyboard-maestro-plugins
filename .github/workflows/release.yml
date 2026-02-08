@@ -15,22 +15,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Zip Gemini Plugin
-        run: zip -r Gemini.zip Gemini
-
-      - name: Zip Nano Banana Plugin
-        run: zip -r "Nano Banana.zip" "Nano Banana"
-
-
-      - name: Zip Gemini Vision Plugin
-        run: zip -r "Gemini Vision.zip" "Gemini Vision"
-
+      - name: Zip Plugins
+        run: |
+          for dir in */; do
+            # Remove trailing slash
+            dirname="${dir%/}"
+            # Skip hidden directories (though */ usually ignores .* anyway, good to be safe if shell options change)
+            if [[ "$dirname" == .* ]]; then
+              continue
+            fi
+            echo "Zipping $dirname..."
+            zip -r "${dirname}.zip" "$dirname"
+          done
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          files: |
-            Gemini.zip
-            Nano Banana.zip
-            Gemini Vision.zip
+          files: "*.zip"
           generate_release_notes: true
