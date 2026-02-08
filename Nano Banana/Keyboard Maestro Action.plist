@@ -17,7 +17,7 @@
 	<key>Title</key>
 	<string>Nano Banana</string>
 	<key>Results</key>
-	<string>Window|Variable|Clipboard</string>
+	<string>Window|Variable|Clipboard|File</string>
 	<key>Parameters</key>
 	<array>
 		<dict>
